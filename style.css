@@ -1,0 +1,666 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+}
+
+h2, h3, a {
+  font-family: "Bebas Neue", cursive;
+  font-weight: lighter;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C68642;
+  color: #fff;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.cta {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #C68642;
+  color: #000;
+  transition: 200ms;
+  letter-spacing: 1px;
+}
+.cta:hover {
+  color: #252525;
+  background-color: #F7EFE3;
+  border: 1px solid #252525;
+}
+
+.prestations__box--buttons button {
+  border: none;
+  background-color: #F7EFE3;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 300ms;
+}
+.prestations__box--buttons button:focus {
+  color: #C68642;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  align-items: center;
+  /* Close btn */
+  /* Icône burger */
+  /* Cache le menu burger + nav */
+}
+.header__title {
+  padding-left: 2rem;
+}
+.header__socials {
+  padding-right: 2rem;
+}
+.header__socials i {
+  font-size: 1.2rem;
+  padding: 0 0.3rem 0 0.3rem;
+}
+.header__nav--link::after {
+  transition: all ease-in-out 300ms;
+  content: "";
+  display: block;
+  width: 0;
+  padding-bottom: 2.5px;
+}
+.header__nav--link:hover::after {
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+.header__nav {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.header__nav a::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  opacity: 0;
+  background-color: #252525;
+  transform-origin: center;
+  transform: translate(-50%, 0) scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.header__nav a:hover::before {
+  transform: translate(-50%, 0) scaleX(1);
+  opacity: 1;
+}
+.header__nav a:hover {
+  transition: 300ms;
+  color: #252525;
+}
+.header__closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.header__burgerNav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: -250px;
+  align-self: flex-end;
+  background-color: #C68642;
+  padding-top: 60px;
+  transition: right 0.5s ease;
+  z-index: 2;
+  /* Sidenav menu links */
+  /* Active class */
+}
+.header__burgerNav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #252525;
+  display: block;
+  transition: 0.3s;
+}
+.header__burgerNav a::after {
+  content: "";
+  transform: translateX();
+}
+.header__burgerNav a:hover {
+  color: #F7EFE3;
+}
+.header__burgerNav.active {
+  right: 0;
+}
+.header #open-btn {
+  width: 35px;
+  padding: 1rem;
+}
+.header .burger-icon span {
+  display: block;
+  text-align: right;
+  width: 35px;
+  height: 5px;
+  background-color: #C68642;
+  margin: 6px 0;
+  margin-right: 2rem;
+}
+.header .heaver__burgerNav, .header .burger-icon {
+  display: none;
+  visibility: hidden;
+}
+
+.mobile {
+  display: none;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    align-items: center;
+    height: 7.5rem;
+  }
+  .header__nav {
+    display: none;
+    visibility: hidden;
+  }
+  .header__burgerNav, .header .burger-icon, .header ul {
+    display: block;
+    visibility: visible;
+  }
+  .header__socials {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mobile {
+    display: block;
+    visibility: visible;
+    align-self: center;
+    margin-right: 0;
+    margin-top: 3rem;
+  }
+}
+.banner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  height: 45rem;
+}
+.banner h1 {
+  z-index: 1;
+  position: relative;
+  font-size: 10rem;
+  margin: 0;
+  color: #C68642;
+  font-weight: lighter;
+}
+.banner p {
+  z-index: 1;
+  position: relative;
+  right: 16rem;
+  bottom: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+.banner__mainImg {
+  position: relative;
+  bottom: 8rem;
+  height: 35rem;
+  width: 28rem;
+  object-fit: cover;
+}
+.banner__smallImg {
+  position: relative;
+  bottom: 26rem;
+  left: 17rem;
+  height: 20rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0 20% 0 20%;
+  margin-bottom: 5rem;
+}
+.description__infos {
+  padding: 0 5rem 0 5rem;
+}
+.description__infos p {
+  width: 20rem;
+  padding-bottom: 0.5rem;
+}
+
+.prestations {
+  margin: 10rem 0 10rem 0;
+}
+.prestations__title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.prestations__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 5rem;
+}
+.prestations__container h3 {
+  text-align: center;
+  margin: 0;
+}
+.prestations__description {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+}
+.prestations__image {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+}
+.prestations__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #F7EFE3;
+  color: #252525;
+}
+.prestations__box h3 {
+  font-size: 2rem;
+}
+.prestations__box--buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+}
+.prestations__box--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 3rem 0;
+}
+.prestations__box--container .coiffure-infos {
+  padding: 0 1rem 0 1rem;
+}
+.prestations__box--container .prestations__infos {
+  display: flex;
+  align-items: center;
+}
+.prestations__box--container .prestations__infos span {
+  border-bottom: 1px solid darkgray;
+  width: 5rem;
+  padding-top: 0.8rem;
+  margin: 0 0.5rem 0 0.5rem;
+}
+.prestations__box--container .prestations__infos p:last-child {
+  margin: 0;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team__container {
+  display: flex;
+  padding-bottom: 2rem;
+}
+.team__container .team__img {
+  height: 20rem;
+  padding: 0 1rem 0 1rem;
+}
+.team__container h3 {
+  position: relative;
+  font-size: 2rem;
+  margin: 0;
+}
+.team__container hr {
+  position: relative;
+  bottom: 1.4rem;
+  z-index: -1;
+  padding: 0.3rem;
+  margin: 0;
+  margin-left: 0.23rem;
+  width: 2.5rem;
+  background-color: #C68642;
+}
+.team__container p {
+  margin: 0;
+  padding-left: 0.5rem;
+  font-weight: 100;
+}
+
+.clients {
+  height: 20rem;
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+}
+.clients__title {
+  text-align: center;
+}
+.clients .carroussel-img {
+  height: 20rem;
+  width: 20rem;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1150px) {
+  .prestations__container {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .prestations__description {
+    padding: 0 1rem 0 1rem;
+  }
+}
+@media screen and (min-width: 820px) {
+  .clients__container {
+    visibility: hidden;
+    display: none;
+  }
+}
+@media screen and (max-width: 820px) {
+  .banner {
+    height: auto;
+  }
+  .banner h1 {
+    font-size: 6rem;
+  }
+  .banner p {
+    top: 22rem;
+    right: 0;
+    z-index: 0;
+  }
+  .banner__mainImg {
+    width: 20rem;
+    height: 25rem;
+    margin-top: 1.5rem;
+  }
+  .banner__smallImg {
+    display: none;
+    visibility: hidden;
+  }
+
+  .description {
+    padding: 0 1rem 0 1rem;
+  }
+  .description__infos {
+    padding: 0;
+  }
+  .description__infos p {
+    width: 15rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .prestations__title {
+    margin-bottom: 5rem;
+  }
+  .prestations__container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .prestations__container .prestations__description {
+    margin-bottom: 5rem;
+    text-align: justify;
+  }
+
+  .team {
+    align-items: center;
+  }
+  .team__container {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .team__container .team__img {
+    padding: 0;
+    width: 50%;
+    object-fit: cover;
+  }
+  .team__container .team__infos {
+    padding: 0 5rem 0 5rem;
+  }
+
+  .clients {
+    padding: 2rem 1rem 2rem 1rem;
+    min-height: 50rem;
+    overflow: hidden;
+    margin-bottom: 10rem;
+  }
+  .clients .gallery {
+    visibility: hidden;
+    display: none;
+  }
+  .clients__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .clients__container img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 525px) {
+  .banner h1 {
+    font-size: 4rem;
+  }
+  .banner__mainImg {
+    width: 15rem;
+    height: 20rem;
+  }
+  .banner p {
+    top: 16.5rem;
+  }
+
+  .description {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .description__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .prestations__title {
+    margin-bottom: 2rem;
+  }
+  .prestations__box--buttons {
+    flex-wrap: wrap;
+  }
+  .prestations__box--buttons button {
+    padding-bottom: 1rem;
+  }
+  .prestations__infos {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .prestations__infos span {
+    display: none;
+    visibility: hidden;
+  }
+  .prestations__box--container .container {
+    width: 90%;
+  }
+
+  .team__container {
+    padding: 0;
+  }
+  .team__container .team__img {
+    position: relative;
+    width: 100%;
+  }
+  .team__container .team__infos {
+    z-index: 1;
+    padding: 0;
+    position: absolute;
+    color: #fff;
+    background-color: #C68642;
+    height: 20rem;
+    width: 35%;
+    text-align: center;
+  }
+  .team__container .team__infos h3 {
+    padding-top: 1rem;
+  }
+  .team__container .team__infos p {
+    margin-top: -0.5rem;
+  }
+  .team__container .team__infos hr {
+    visibility: hidden;
+    display: none;
+  }
+
+  .team__container:nth-child(3) .team__infos {
+    right: 0;
+    background-color: #252525;
+  }
+  .team__container:nth-child(3) .team__img {
+    width: 65%;
+  }
+}
+.footer__title {
+  text-align: center;
+}
+.footer hr {
+  position: relative;
+  top: 4rem;
+  z-index: -1;
+  border: 1px solid #000;
+}
+.footer__container {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+  margin: 0 0 1rem 8rem;
+}
+.footer__container .footer__infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer__container .footer__infos h2 {
+  font-size: 50px;
+  margin: 0;
+  padding-right: 2rem;
+  align-self: center;
+}
+.footer__container .footer__infos div:nth-child(3) {
+  padding-right: 1rem;
+}
+.footer__links {
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.footer__links a {
+  color: #fff;
+  margin: 0.5rem 0 0.5rem 0;
+  font-family: "Lato", sans-serif;
+}
+.footer__links a:hover {
+  color: #C68642;
+}
+.footer__links a:first-child {
+  margin-top: 1rem;
+}
+.footer__notes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__notes p {
+  padding-left: 2rem;
+}
+.footer__notes .footer__socials {
+  padding-right: 1rem;
+}
+.footer__notes .footer__socials i {
+  font-size: 1.2rem;
+  padding: 0 0.3rem 0 0.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__container {
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .footer__container .footer__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer__container .footer__infos h2 {
+    padding: 0;
+  }
+  .footer__container .footer__infos div {
+    margin: 0;
+    padding: 0;
+  }
+  .footer__container .footer__infos div:nth-child(3) {
+    padding: 0;
+  }
+  .footer__notes {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .footer__notes p {
+    padding: 0;
+  }
+  .footer__notes .footer__socials {
+    padding: 0;
+  }
+  .footer__notes .footer__socials i {
+    font-size: 1.5rem;
+  }
+  .footer hr {
+    top: 23.8rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

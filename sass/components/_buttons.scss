@@ -1,0 +1,25 @@
+.cta {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: $colour-primary;
+    color: #000;
+    transition: 200ms;
+    letter-spacing: 1px;
+    &:hover {
+        color: $colour-secondary;
+        background-color: $colour-tertiary;
+        border: 1px solid $colour-secondary;
+    }
+}
+
+.prestations__box--buttons button {
+    border: none;
+    background-color: $colour-tertiary;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 300ms;
+    &:focus {
+        color: $colour-primary;
+    }
+}

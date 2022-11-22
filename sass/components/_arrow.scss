@@ -1,0 +1,17 @@
+.arrow {
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $colour-primary;
+    // border: 1px solid $colour-primary;
+    color: #fff;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    cursor: pointer;
+}

@@ -1,0 +1,111 @@
+.footer {
+    &__title {
+        text-align: center;
+    }
+    & hr {
+        position: relative;
+        top: 4rem;
+        z-index: -1;
+        border: 1px solid #000;
+    }
+    &__container {
+        background-color: #000;
+        color: #fff;
+        padding: 2rem;
+        margin: 0 0 1rem 8rem;
+        .footer__infos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            & h2 {
+                font-size: 50px;
+                margin: 0;
+                padding-right: 2rem;
+                align-self: center;
+            }
+            & div:nth-child(3) {
+                padding-right: 1rem;
+            }
+        }
+    }
+    &__links {
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        & a {
+            color: #fff;
+            margin: 0.5rem 0 0.5rem 0;
+            font-family: "Lato", sans-serif;
+            &:hover {
+                color: $colour-primary;
+            }
+        } 
+        & a:first-child {
+            margin-top: 1rem;
+        }
+    }
+    &__notes {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & p {
+            padding-left: 2rem;
+        }
+        .footer__socials {
+            padding-right: 1rem;
+            & i {
+                font-size: 1.2rem;
+                padding: 0 0.3rem 0 0.3rem;
+            }
+        }
+    }
+}
+
+//RESPONSIVE 
+@media screen and (max-width: 768px) {
+    .footer {
+        &__container {
+            margin-left: 0;
+            padding-left: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .footer {
+        &__container {
+            .footer__infos {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center; 
+                & h2 {
+                    padding: 0;
+                }
+                & div {
+                    margin: 0;
+                    padding: 0;
+                }
+                & div:nth-child(3) {
+                    padding: 0;
+                }
+            }
+        }
+        &__notes {
+            display: flex;
+            flex-direction: column-reverse;
+            & p {
+                padding: 0;
+            }
+            .footer__socials {
+                padding: 0;
+                & i {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        & hr {
+            top: 23.8rem;
+        }
+    }
+}
