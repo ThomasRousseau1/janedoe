@@ -1,20 +1,22 @@
 //CARROUSEL SPLIDE
-const splide = new Splide( '.gallery', {
-  type   : 'loop',
-  drag   : 'free',
-  focus  : 'center',
-  perPage: 4,
-  gap: 50,
-  width: '80%',
-  arrows: false, 
-  pagination: false,
-  autoScroll: {
-    speed: 1,
-    pauseOnHover: true,
-  },
-} );
-
-splide.mount(window.splide.Extensions);
+document.addEventListener("DOMContentLoaded", () => {
+  const splide = new Splide( '.gallery', {
+    type   : 'loop',
+    drag   : 'free',
+    focus  : 'center',
+    perPage: 4,
+    gap: 50,
+    width: '80%',
+    arrows: false, 
+    pagination: false,
+    autoScroll: {
+      speed: 1,
+      pauseOnHover: true,
+    },
+  } );
+  
+  splide.mount(window.splide.Extensions);
+})
 
 //GSAP 
 //BANNER
