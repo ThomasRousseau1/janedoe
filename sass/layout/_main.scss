@@ -156,11 +156,11 @@
 
 //CLIENTS 
 .clients {
-    height: 20rem;
     margin-top: 10rem;
-    margin-bottom: 15rem;
+    margin-bottom: 3rem;
     &__title {
         text-align: center;
+        margin-bottom: 3rem;
     }
     .carroussel-img {
         height: 20rem;
@@ -180,8 +180,20 @@
 }
 @media screen and (min-width: 820px) {
     .clients__container {
-        visibility: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        & img {
+            width: 12rem;
+            padding: 0 1rem 1rem 1rem;
+            object-fit: cover;
+            height: 14rem;
+        }
+    }
+    .gallery {
         display: none;
+        visibility: hidden;
     }
 }
 @media screen and (max-width: 820px) {
